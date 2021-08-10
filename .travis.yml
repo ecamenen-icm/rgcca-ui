@@ -1,8 +1,18 @@
 language: R
 sudo: false
 cache: packages
-r: bioc-release
+
+r:
+  - bioc-release
+  - 3.6
+  - 3.5
+  - 3.4
+  - 3.3
 
 after_success:
-- tar -xf *tar.gz
-- Rscript -e 'covr::codecov()'
+  - tar -xvf *tar.gz
+  - Rscript -e 'covr::package_coverage(quiet = FALSE)'
+  - Rscript -e 'covr::codecov()'
+
+after_script:
+- ls -larth
