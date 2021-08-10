@@ -10,7 +10,7 @@ r:
   - 3.3
 
 after_success:
-  - tar -xvf *tar.gz
+  - tar -C .. -xvf *tar.gz
   - Rscript -e 'covr::package_coverage(quiet = FALSE)'
   - Rscript -e 'covr::codecov()'
 
