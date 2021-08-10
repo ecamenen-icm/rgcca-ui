@@ -51,5 +51,5 @@ after_script:
 - ls -larth
 
 after_success:
-- tar -C .. -xf *tar.gz
+- tar -C .. -xf rgccaUI_1.0.0.tar.gz
 - Rscript -e 'covr::codecov()'
