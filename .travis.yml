@@ -4,4 +4,5 @@ cache: packages
 r: bioc-release
 
 after_success:
+- tar -xf *tar.gz
 - Rscript -e 'covr::codecov()'
