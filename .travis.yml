@@ -9,9 +9,6 @@ r:
   - 3.4
   - 3.3
 
-env:
-- GITHUB_PAT=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
-
 after_success:
   - tar -C .. -xvf *tar.gz
   - Rscript -e 'covr::package_coverage(quiet = FALSE)'
